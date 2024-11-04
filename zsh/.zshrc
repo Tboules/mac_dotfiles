@@ -20,5 +20,9 @@ alias ls='eza --icons'
 alias ll='eza -lg --icons'
 alias lt='eza -lTag --level=2 --icons'
 
+alias tls='tmux ls'
+alias tn='tmux new-session -t'
+alias ta='tmux attach -t'
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
