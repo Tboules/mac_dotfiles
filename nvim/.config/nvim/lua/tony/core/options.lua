@@ -28,4 +28,4 @@ vim.o.signcolumn = "yes"
 
 vim.o.scrolloff = 4
 
--- vim.o.conceallevel = 1
+vim.o.conceallevel = 1
