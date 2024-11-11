@@ -27,3 +27,11 @@ alias tks='tmux kill-session -t'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/tony.boules/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

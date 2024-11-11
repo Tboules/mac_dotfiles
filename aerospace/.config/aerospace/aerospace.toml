@@ -133,6 +133,10 @@ if.app-id = 'com.microsoft.teams2'
 run = 'move-node-to-workspace 3 --focus-follows-window'
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = 'move-node-to-workspace 3 --focus-follows-window'
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 4 --focus-follows-window'
 
