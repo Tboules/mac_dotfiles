@@ -41,39 +41,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # nvm
 
-# Func to display Gandalf
-display_gandalf_art() {
-  cat << "EOF"
-
-                       ,---.
-                       /    |
-                      /     |
-                     /      |
-                    /       |
-               ___,'        |
-             <  -'          :
-              `-.__..--'``-,_\_
-                 |o/ ` :,.)_`>
-                 :/ `     ||/)
-                 (_.).__,-` |\
-                 /( `.``   `| :
-                 \'`-.)  `  ; ;
-                 | `       /-<
-                 |     `  /   `.
- ,-_-..____     /|  `    :__..-'\
-/,'-.__\\  ``-./ :`      ;       \
-`\ `\  `\\  \ :  (   `  /  ,   `. \
-  \` \   \\   |  | `   :  :     .\ \
-   \ `\_  ))  :  ;     |  |      ): :
-  (`-.-'\ ||  |\ \   ` ;  ;       | |
-   \-_   `;;._   ( `  /  /_       | |
-    `-.-.// ,'`-._\__/_,'         ; |
-       \:: :     /     `     ,   /  |
-        || |    (        ,' /   /   |
-        ||                ,'   / SSt|
-
-EOF
-}
-
-# Call the function
-display_gandalf_art

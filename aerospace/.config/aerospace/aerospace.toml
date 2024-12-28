@@ -1,8 +1,8 @@
 after-login-command = []
 
 after-startup-command = [
-  'exec-and-forget sketchybar',
-  'exec-and-forget borders active_color=0xffa0c4ff inactive_color=0xff48596c width=6.0'
+  # 'exec-and-forget sketchybar',
+  # 'exec-and-forget borders active_color=0xffa0c4ff inactive_color=0xff48596c width=6.0'
 ]
 
 exec-on-workspace-change = [
@@ -11,7 +11,7 @@ exec-on-workspace-change = [
   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
-start-at-login = true
+start-at-login = false
 
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
