@@ -21,6 +21,7 @@ return {
 			time_format = "%H:%M",
 		},
 		daily_notes = {
+			-- TODO replace 2024 with 2025
 			folder = "Calendar/2024/daily",
 			template = "daily_note.md",
 		},
