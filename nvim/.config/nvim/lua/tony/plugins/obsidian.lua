@@ -36,7 +36,7 @@ return {
 		end,
 
 		-- New Note
-		notes_subdir = "+ Encounters/",
+		notes_subdir = "Cards/",
 		new_notes_location = "notes_subdir",
 
 		---@param title string|?
