@@ -16,9 +16,12 @@
                 "to_if_held_down": [
                   {
                     "key_code": "left_shift",
-                    "modifiers": ["left_control", "left_option", "left_command"]
-                  }
-                ],
+                    "modifiers": [
+                      "left_control",
+                      "left_option",
+                      "left_command"
+                    ],
+                  },
                 "type": "basic"
               }
             ]
