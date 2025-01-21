@@ -36,8 +36,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# nvm
+if [[ "$(uname)" == "Darwin" ]]; then
+  # nvm on mac
+  export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+elif [[ "$(uname)" == "Linux" ]]; then
+  # nvm on linux
+  source /usr/share/nvm/init-nvm.sh
+fi;
+
 
