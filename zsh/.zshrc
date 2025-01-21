@@ -46,3 +46,9 @@ elif [[ "$(uname)" == "Linux" ]]; then
 fi;
 
 
+# start ssh agent on linux
+
+if [[ "$(uname)" == "Linux" ]]; then
+  eval "$(ssh-agent -s)"
+  ssh-add $HOME/.ssh/tboules_github
+fi;
