@@ -47,3 +47,6 @@ map("n", "<leader>to", ":ObsidianToday<CR>")
 map("n", "<leader>ty", ":ObsidianYesterday<CR>")
 map("n", "<leader>nn", ":ObsidianNew")
 map("n", "<leader>tt", ":ObsidianQuickSwitch todo_2025<CR>")
+
+-- Zen Mode
+map("n", "<leader>zn", ":ZenMode<CR>")
