@@ -25,6 +25,9 @@ alias tn='tmux new-session -t'
 alias ta='tmux attach -t'
 alias tks='tmux kill-session -t'
 
+alias f='fzf --preview="bat --color=always {}"'
+alias of='nvim $(fzf --preview="bat --color=always {}")'
+
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
