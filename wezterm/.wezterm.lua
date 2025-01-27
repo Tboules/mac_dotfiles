@@ -5,7 +5,7 @@ local config = {}
 config.color_scheme = "Classic Dark (base16)"
 -- config.color_scheme = "GitHub Dark"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14.0
+config.font_size = 15.0
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
