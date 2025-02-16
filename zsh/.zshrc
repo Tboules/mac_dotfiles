@@ -1,4 +1,5 @@
 # Paths
+export PATH=.:~/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="/opt/homebrew/bin/eza:$PATH"
 
