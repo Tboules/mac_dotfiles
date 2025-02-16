@@ -3,7 +3,7 @@
 CONFIG_FILE="$HOME/mac_dotfiles/hypr/.config/hypr/hyprland.conf"
 
 GAP_VALUE=$(grep "gaps_out" $CONFIG_FILE | awk -F'=' '{print $2}' | tr -d ' ' )
-VERTICAL_PADDING=600
+VERTICAL_PADDING=550
 
 echo $GAP_VALUE
 
