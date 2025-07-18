@@ -22,12 +22,13 @@ alias ll='eza -lg --icons'
 alias lt='eza -lTag --level=2 --icons'
 
 alias tls='tmux ls'
-alias tn='tmux new-session -t'
+alias tn='~/mac_dotfiles/scripts/tmux-session.sh'
 alias ta='tmux attach -t'
 alias tks='tmux kill-session -t'
 
 alias f='fzf --preview="bat --color=always {}"'
 alias of='nvim $(fzf --preview="bat --color=always {}")'
+alias ai='gemini'
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
