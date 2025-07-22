@@ -10,8 +10,8 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.autoindent = true
 
-vim.opt.termguicolors = true
-vim.background = "dark"
+vim.o.termguicolors = true
+vim.o.background = "dark"
 
 vim.o.undofile = true
 vim.o.hlsearch = false

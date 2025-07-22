@@ -22,7 +22,7 @@ alias ll='eza -lg --icons'
 alias lt='eza -lTag --level=2 --icons'
 
 alias tls='tmux ls'
-alias tn='~/mac_dotfiles/scripts/tmux-session.sh'
+alias tn='tmux-session.sh'
 alias ta='tmux attach -t'
 alias tks='tmux kill-session -t'
 

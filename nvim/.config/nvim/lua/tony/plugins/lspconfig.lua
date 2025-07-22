@@ -1,11 +1,15 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		{ "williamboman/mason.nvim", config = true },
-		"williamboman/mason-lspconfig.nvim",
+		{ "mason-org/mason.nvim", opts = {} },
+		"mason-org/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+
+		-- Useful status updates for LSP.
 		{ "j-hui/fidget.nvim", opts = {} },
-		{ "folke/neodev.nvim", opts = {} },
+
+		-- Allows extra capabilities provided by blink.cmp
+		"saghen/blink.cmp",
 	},
 
 	config = function()
