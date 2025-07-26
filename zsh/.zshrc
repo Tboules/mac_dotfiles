@@ -33,14 +33,6 @@ alias ai='gemini'
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 if [[ "$(uname)" == "Darwin" ]]; then
   # nvm on mac
   export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -50,6 +42,13 @@ elif [[ "$(uname)" == "Linux" ]]; then
   source /usr/share/nvm/init-nvm.sh
 fi;
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 # start ssh agent on linux
 if [[ "$(uname)" == "Linux" ]]; then
