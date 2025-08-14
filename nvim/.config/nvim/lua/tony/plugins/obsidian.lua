@@ -21,7 +21,6 @@ return {
 			time_format = "%H:%M",
 		},
 		daily_notes = {
-			-- TODO replace 2024 with 2025
 			folder = "Calendar/2025/daily",
 			template = "daily_note.md",
 		},
@@ -29,6 +28,57 @@ return {
 			nvim_cmp = true,
 		},
 		disable_frontmatter = true,
+
+		mappings = {
+			["nn"] = {
+				action = function()
+					local client = require("obsidian").get_client()
+					if not client then
+						vim.notify("client unavailable", vim.log.levels.ERROR)
+						return
+					end
+
+					local note_name = vim.fn.input("New Note Name: ")
+					if note_name == nil or note_name == "" then
+						vim.notify("A name for the note must be provided", vim.log.levels.ERROR)
+						return
+					end
+
+					local successful_new_note_created = pcall(function()
+						client.command(client, "ObsidianNew", { args = note_name })
+					end)
+
+					if successful_new_note_created then
+						client.command(
+							client,
+							"ObsidianTemplate",
+							{ args = "~/Documents/vault/gnosis/Extras/templates/encounter_template.md" }
+						)
+					end
+				end,
+				opts = { noremap = false },
+			},
+			["gf"] = {
+				action = function()
+					return require("obsidian").util.gf_passthrough()
+				end,
+				opts = { noremap = false, expr = true, buffer = true },
+			},
+			-- Toggle check-boxes.
+			["<leader>ch"] = {
+				action = function()
+					return require("obsidian").util.toggle_checkbox()
+				end,
+				opts = { buffer = true },
+			},
+			-- Smart action depending on context, either follow link or toggle checkbox.
+			["<cr>"] = {
+				action = function()
+					return require("obsidian").util.smart_action()
+				end,
+				opts = { buffer = true, expr = true },
+			},
+		},
 
 		---@param url string
 		follow_url_func = function(url)

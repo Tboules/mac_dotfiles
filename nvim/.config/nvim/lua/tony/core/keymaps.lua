@@ -45,7 +45,7 @@ map("n", "<C-u>", "<C-u>zz", defaults)
 map("n", "<leader>so", ":ObsidianSearch<CR>")
 map("n", "<leader>to", ":ObsidianToday<CR>")
 map("n", "<leader>ty", ":ObsidianYesterday<CR>")
-map("n", "<leader>nn", ":ObsidianNew")
+-- map("n", "<leader>nn", ":ObsidianNew")
 map("n", "<leader>tt", ":ObsidianQuickSwitch todo_2025<CR>")
 
 -- Zen Mode
