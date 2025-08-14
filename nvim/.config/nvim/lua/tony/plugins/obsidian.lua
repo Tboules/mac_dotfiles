@@ -32,6 +32,7 @@ return {
 		mappings = {
 			["nn"] = {
 				action = function()
+					local template_path = "~/Documents/vault/gnosis/Extras/templates/encounter_template.md"
 					local client = require("obsidian").get_client()
 					if not client then
 						vim.notify("client unavailable", vim.log.levels.ERROR)
@@ -44,17 +45,8 @@ return {
 						return
 					end
 
-					local successful_new_note_created = pcall(function()
-						client.command(client, "ObsidianNew", { args = note_name })
-					end)
-
-					if successful_new_note_created then
-						client.command(
-							client,
-							"ObsidianTemplate",
-							{ args = "~/Documents/vault/gnosis/Extras/templates/encounter_template.md" }
-						)
-					end
+					local note = client.create_note(client, { title = note_name, template = template_path })
+					client.open_note(client, note)
 				end,
 				opts = { noremap = false },
 			},
