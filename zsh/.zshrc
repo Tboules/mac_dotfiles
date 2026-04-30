@@ -50,8 +50,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+# local bin
+export PATH=".:$HOME/bin:$HOME/.local/bin:$HOME/.local/share/bob/nvim-bin:/opt/homebrew/bin:$PNPM_HOME:$PATH"
+
 # start ssh agent on linux
 if [[ "$(uname)" == "Linux" ]]; then
   eval "$(ssh-agent -s)" &>/dev/null
-  ssh-add $HOME/.ssh/tboules_github &>/dev/null
+  ssh-add $HOME/.ssh/tboules_gkthub &>/dev/null
 fi;

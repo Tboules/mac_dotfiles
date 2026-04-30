@@ -16,6 +16,7 @@ if [ $? != 0 ]; then
   tmux new-session -d -s $SESSION_NAME -n neovim
   tmux new-window -t $SESSION_NAME -n node
   tmux new-window -t $SESSION_NAME -n git
+  tmux new-window -t $SESSION_NAME -n claude
 
   tmux select-window -t $SESSION_NAME:neovim
 fi
