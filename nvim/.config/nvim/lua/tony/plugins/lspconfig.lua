@@ -26,7 +26,7 @@ return {
 
 				map("<leader>dl", vim.diagnostic.open_float, "[D]iagnostic [L]ine")
 				map("<leader>db", vim.diagnostic.open_float, "[D]iagnostic [B]uffer")
-				map("<leader>lr", ":LspRestart<enter>", "[l]sp restart")
+				map("<leader>lr", ":lsp restart<enter>", "[l]sp restart")
 
 				-- Fuzzy find all the symbols in your current document.
 				--  Symbols are things like variables, functions, types, etc.

@@ -30,3 +30,6 @@ vim.o.signcolumn = "yes"
 vim.o.scrolloff = 4
 
 vim.o.conceallevel = 1
+
+-- autoread config to help the buffer autoreload when files are changed by claude
+vim.o.autoread = true

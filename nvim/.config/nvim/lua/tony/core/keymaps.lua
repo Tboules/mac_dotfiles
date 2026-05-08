@@ -42,11 +42,17 @@ map("n", "<C-d>", "<C-d>zz", defaults)
 map("n", "<C-u>", "<C-u>zz", defaults)
 --
 -- Obsidian
-map("n", "<leader>so", ":ObsidianSearch<CR>")
-map("n", "<leader>to", ":ObsidianToday<CR>")
-map("n", "<leader>ty", ":ObsidianYesterday<CR>")
--- map("n", "<leader>nn", ":ObsidianNew")
-map("n", "<leader>tt", ":ObsidianQuickSwitch todo_2025<CR>")
+map("n", "<leader>so", ":Obsidian search<CR>")
+map("n", "<leader>tt", ":Obsidian new Calendar/2025/todo_2025 <CR>")
+-- map("n", "<leader>nn", ":Obsidian new_from_template {} encounter_template")
+
+map("n", "<leader>nn", function()
+	vim.ui.input({ prompt = "New Note Name: " }, function(name)
+		if name and name ~= "" then
+			vim.cmd("Obsidian new_from_template " .. name .. " encounter_template")
+		end
+	end)
+end)
 
 -- Zen Mode
 map("n", "<leader>zn", ":ZenMode<CR>")
