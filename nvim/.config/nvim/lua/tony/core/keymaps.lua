@@ -56,3 +56,6 @@ end)
 
 -- Zen Mode
 map("n", "<leader>zn", ":ZenMode<CR>")
+
+-- Exit terminal mode
+map("t", "<Esc><Esc>", "<C-\\><C-n>")

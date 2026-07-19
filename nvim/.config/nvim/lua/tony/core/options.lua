@@ -23,7 +23,7 @@ vim.o.smartcase = true
 vim.o.completeopt = "menuone,noselect"
 
 vim.o.wrap = true
-vim.o.linebreak = false
+vim.o.linebreak = true
 
 vim.o.signcolumn = "yes"
 
