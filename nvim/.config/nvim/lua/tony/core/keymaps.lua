@@ -14,12 +14,6 @@ map("n", "<leader>sp", "<C-w><C-r>", { desc = "Swap Splits" })
 map("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 
--- map("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
--- map("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
--- map("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
--- map("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
--- map("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-
 -- vim commands
 map("n", "<leader>pv", vim.cmd.Ex)
 map("i", "<C-l>", "<esc>la")
@@ -53,9 +47,3 @@ map("n", "<leader>nn", function()
 		end
 	end)
 end)
-
--- Zen Mode
-map("n", "<leader>zn", ":ZenMode<CR>")
-
--- Exit terminal mode
-map("t", "<Esc><Esc>", "<C-\\><C-n>")

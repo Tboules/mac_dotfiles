@@ -1,5 +1,4 @@
 return {
-  "christoomey/vim-tmux-navigator",
-  "stevearc/dressing.nvim",
-  "JoosepAlviste/nvim-ts-context-commentstring"
+	"christoomey/vim-tmux-navigator",
+	"JoosepAlviste/nvim-ts-context-commentstring",
 }
