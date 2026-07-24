@@ -10,6 +10,13 @@ vim.pack.add({
 	{ src = gh("saghen/blink.cmp") },
 	{ src = gh("rafamadriz/friendly-snippets") },
 	{ src = gh("L3MON4D3/LuaSnip"), version = vim.version.range("2.*") },
+	{ src = gh("folke/lazydev.nvim") },
+})
+
+require("lazydev").setup({
+	library = {
+		{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+	},
 })
 
 require("fidget").setup()
@@ -105,32 +112,6 @@ local servers = {
 	lua_ls = {
 		on_init = function(client)
 			client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
-
-			if client.workspace_folders then
-				local path = client.workspace_folders[1].name
-				if
-					path ~= vim.fn.stdpath("config")
-					and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
-				then
-					return
-				end
-			end
-
-			client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-				runtime = {
-					version = "LuaJIT",
-					path = { "lua/?.lua", "lua/?/init.lua" },
-				},
-				workspace = {
-					checkThirdParty = false,
-					-- NOTE: this is a lot slower and will cause issues when working on your own configuration.
-					--  See https://github.com/neovim/nvim-lspconfig/issues/3189
-					library = vim.tbl_extend("force", vim.api.nvim_get_runtime_file("", true), {
-						"${3rd}/luv/library",
-						"${3rd}/busted/library",
-					}),
-				},
-			})
 		end,
 		---@type lspconfig.settings.lua_ls
 		settings = {
@@ -174,7 +155,15 @@ cmp.setup({
 		documentation = { auto_show = false, auto_show_delay_ms = 500 },
 	},
 	sources = {
-		default = { "lsp", "path", "snippets" },
+		default = { "lazydev", "lsp", "path", "snippets" },
+		providers = {
+			lazydev = {
+				name = "LazyDev",
+				module = "lazydev.integrations.blink",
+				-- make lazydev completions top priority (see `:h blink.cmp`)
+				score_offset = 100,
+			},
+		},
 	},
 	snippets = { preset = "luasnip" },
 	fuzzy = { implementation = "lua" },
