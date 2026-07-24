@@ -1,6 +1,4 @@
----@param repo string
----@return string
-local function gh(repo) return 'https://github.com/' .. repo end
+local gh = require('util').gh
 
 vim.pack.add({
   gh "christoomey/vim-tmux-navigator",
