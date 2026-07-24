@@ -1,10 +1,16 @@
 vim.pack.add({"https://github.com/folke/snacks.nvim"})
 
 require("snacks").setup({
+  dashboard = {
+    sections = {
+      { section = 'header'},
+      { section = 'keys', gap = 1, padding = 1 }
+    }
+  },
   picker = {},
   input = {},
   explorer = {},
-  notifier = { enabled = true }
+  notifier = {enable = true}
 })
 vim.keymap.set("n", "<leader>e", function() Snacks.explorer() end, {desc = "File Explorer" })
 vim.keymap.set("n", "<leader>sf", function() Snacks.picker.files() end, { desc = "Find files" })

@@ -32,8 +32,14 @@ return {
 	"EdenEast/nightfox.nvim",
 	lazy = false,
 	priority = 1000,
+	opts = {
+		transparent = true,
+	},
 
-	config = function()
+	config = function(_, opts)
 		vim.cmd.colorscheme("nightfox")
+		require("nightfox").setup(opts)
+		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+		vim.api.nvim_set_hl(0, "FloatBorder", { bg = "none" })
 	end,
 }
